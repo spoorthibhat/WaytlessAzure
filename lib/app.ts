@@ -5,7 +5,7 @@ import { Routes } from "./routes/Routes";
 import * as logger from 'morgan';
 import * as session from 'express-session'; 
 
-import GooglePassportObj from "Google-OAuth/GooglePassport";
+import GooglePassportObj from "./Google-OAuth/GooglePassport";
 
 var passport = require('passport');
 
