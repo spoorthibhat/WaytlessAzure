@@ -21,7 +21,7 @@ class App {
         this.app = express();
         this.app.use(cors());
         this.config();      
-        this.routePrv.routes(this.app,passport);    
+        this.routePrv.routes(this.app);    
         
     }
 

@@ -8,6 +8,8 @@ import {OrderModel} from "../models/OrderModel";
 
 import * as express from 'express';
 
+var passport = require('passport');
+
 
 export class Routes {       
 
@@ -37,7 +39,7 @@ export class Routes {
 
       }
 
-    public routes(app,passport): void { 
+    public routes(app): void { 
 
         app.use('/', express.static(__dirname+'/angularDist'));
 		
