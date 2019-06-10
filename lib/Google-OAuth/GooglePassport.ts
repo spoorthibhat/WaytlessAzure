@@ -3,7 +3,7 @@ import { UserModel } from '../models/UserModel';
 
 let passport = require('passport');
 let GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const LocalStrategy = require('passport-local').Strategy;
+//const LocalStrategy = require('passport-local').Strategy;
 
 // Creates a Passport configuration for Google
 class GooglePassport {
