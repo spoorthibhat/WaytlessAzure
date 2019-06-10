@@ -56,6 +56,12 @@ export class Routes {
             }
         )
     );
+
+    app.get('/user/username', this.validateAuth,function(req,res){
+        res.send(req.user.username);
+    })
+
+    
          //get all  menuItems 
             app.route('/menuitems/:restId').get((req: Request, res: Response) => {
                 var restId = req.params.restId;
