@@ -57,6 +57,11 @@ export class Routes {
         )
     );
 
+    app.get('/logout', function(req, res){
+        req.logout();
+        res.redirect('/#/home');
+      });
+
     app.get('/user/details', this.validateAuth,function(req,res){
         res.json(req.user);
     })
