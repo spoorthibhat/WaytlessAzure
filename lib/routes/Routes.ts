@@ -58,7 +58,7 @@ export class Routes {
     );
 
     app.get('/user/username', this.validateAuth,function(req,res){
-        res.send(req.user);
+        res.send(req.user.emails.value);
     })
 
 
