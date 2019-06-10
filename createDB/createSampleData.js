@@ -1,6 +1,12 @@
 // use waitlistsample database 
 db = db.getSiblingDB('waitlistSample')
 
+// create user table
+db.createCollection('user')
+userCollection = db.getCollection("user")
+userCollection.remove({})
+
+
 // create a table 'restaurant'
 db.createCollection('restaurants')
 restCollection = db.getCollection("restaurants")
