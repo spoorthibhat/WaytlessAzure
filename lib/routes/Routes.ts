@@ -58,8 +58,9 @@ export class Routes {
     );
 
     app.get('/logout', function(req, res){
-        req.logout();
-        res.redirect('/#/home');
+        req.session.destroy(function (err) {
+            res.redirect('/'); 
+          });
       });
 
     app.get('/user/details', this.validateAuth,function(req,res){
