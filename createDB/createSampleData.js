@@ -1,12 +1,6 @@
 // use waitlistsample database 
 db = db.getSiblingDB('waitlistSample')
 
-// create user table
-db.createCollection('user')
-userCollection = db.getCollection("user")
-userCollection.remove({})
-
-
 // create a table 'restaurant'
 db.createCollection('restaurants')
 restCollection = db.getCollection("restaurants")
@@ -27,7 +21,7 @@ restCollection.remove({})
                         owner: "uschohk@gmail.com",
                         rating: 5,
                         reviews: 679,
-                        booked:980,
+                        booked:989,
                         url:"../assets/images/dinthaifung.png"
                 }
         )
@@ -64,7 +58,7 @@ restCollection.remove({})
                         },
                         phoneNumber: 4258207740,
                         email: "admin@olivegarden.com",
-                        owner: "uschohk@gmail.com",
+                        owner: "sowmya9029@gmail.com",
                         rating: 4,
                         reviews: 879,
                         booked:100,
@@ -90,7 +84,7 @@ restCollection.remove({})
                         owner: "",
                         rating: 3,
                         reviews:768,
-                        booked:300,
+                        booked:301,
                         url:"../assets/images/image4.jpg"
                 }
         )
