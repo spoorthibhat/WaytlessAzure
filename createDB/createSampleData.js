@@ -84,7 +84,7 @@ restCollection.remove({})
                         owner: "",
                         rating: 3,
                         reviews:768,
-                        booked:300,
+                        booked:301,
                         url:"../assets/images/image4.jpg"
                 }
         )
