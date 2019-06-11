@@ -81,7 +81,7 @@ restCollection.remove({})
                         },
                         phoneNumber: 4257029192,
                         email: "admin@southernspicewa.com",
-                        owner: "uschohk@gmail.com",
+                        owner: "",
                         rating: 3,
                         reviews:768,
                         booked:300,
