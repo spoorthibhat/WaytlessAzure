@@ -67,7 +67,7 @@ export class Routes {
             res.redirect('/#/home'); 
           });
       });
-
+      
     app.get('/user/details', this.validateAuth,function(req,res){
         res.json(req.user);
     })
@@ -317,16 +317,19 @@ export class Routes {
             var restaurantId = req.params.restaurantId;
 
             this.order.retrieveOrderPerCustomer(res,{restaurantID:restaurantId,customerId:customerId});
-            
+        })
+
+        app.route('/order/:orderId').get((req: Request, res: Response) =>{
+            var orderId = req.params.orderId;
+            this.order.retrieveOrderPerCustomer(res,{orderId:orderId});
         })
 
         // add to orderCart
         app.route('/orders').post((req: Request, res: Response) => {
-
             console.log("Restaurant id:" + req.body.restaurantID);
-            
 
             var jsonObj = {
+                "orderId": req.body.orderId,
                 "menuItemId" : req.body.menuitemId,
                 "quantity" : req.body.quantity,
                 "orderTime": req.body.orderTime,

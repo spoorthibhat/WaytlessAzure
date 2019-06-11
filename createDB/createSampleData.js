@@ -24,6 +24,7 @@ restCollection.remove({})
                         },
                         phoneNumber: 4256981095,
                         email: "admin@dintaifung.com",
+                        owner: "uschohk@gmail.com",
                         rating: 5,
                         reviews: 679,
                         booked:980,
@@ -43,6 +44,7 @@ restCollection.remove({})
                         },
                         phoneNumber: 4257462144,
                         email: "admin@ruchi.com",
+                        owner: "spoorthicbhat@gmail.com",
                         rating: 5,
                         reviews: 900,
                         booked:432,
@@ -62,6 +64,7 @@ restCollection.remove({})
                         },
                         phoneNumber: 4258207740,
                         email: "admin@olivegarden.com",
+                        owner: "uschohk@gmail.com",
                         rating: 4,
                         reviews: 879,
                         booked:100,
@@ -84,6 +87,7 @@ restCollection.remove({})
                         },
                         phoneNumber: 4257029192,
                         email: "admin@southernspicewa.com",
+                        owner: "",
                         rating: 3,
                         reviews:768,
                         booked:300,
@@ -104,6 +108,7 @@ restCollection.remove({})
                         },
                         phoneNumber: 4252457551,
                         email: "admin@mediterraneankitchens.net",
+                        owner: "",
                         rating: 4,
                         reviews: 980,
                         url:"../assets/images/image5.jpg"
@@ -466,7 +471,8 @@ waitlistCollection.insert(
         email : "maryk@yahoo.com",
         phone : "2062112222",
         notified: false,
-        confirmed: false
+        confirmed: false,
+        completed: true
 }
 )
 
@@ -481,7 +487,8 @@ waitlistCollection.insert(
                 email : "john@yahoo.com",
                 phone : "2062112222",
                 notified: false,
-                confirmed: false
+                confirmed: false,
+                completed: false
         }
         )
 
@@ -496,7 +503,8 @@ waitlistCollection.insert(
                         email : "john@yahoo.com",
                         phone : "2062112222",
                         notified: false,
-                        confirmed: false
+                        confirmed: false,
+                        completed: false
                 }
                 )
         
@@ -511,7 +519,8 @@ waitlistCollection.insert(
         email : "abc@abc.com",
         phone : "2062112222",
         notified: true,
-        confirmed: true
+        confirmed: true,
+        completed: false
         }
         )
 
@@ -527,7 +536,8 @@ waitlistCollection.insert(
         email : "abc@abc.com",
         phone : "2062112222",
         notified: false,
-        confirmed: false
+        confirmed: false,
+        completed: false
 }
 )
 
@@ -542,7 +552,8 @@ waitlistCollection.insert(
                 email : "abc@abc.com",
                 phone : "2062112222",
                 notified: true,
-                confirmed: true
+                confirmed: true,
+                completed: false
         }
         )
         
@@ -557,7 +568,8 @@ waitlistCollection.insert(
                 email : "abc@abc.com",
                 phone : "2062112222",
                 notified: false,
-                confirmed: false
+                confirmed: false,
+                completed: false
                 }
                 )
         
@@ -573,7 +585,8 @@ waitlistCollection.insert(
                 email : "abc@abc.com",
                 phone : "2062112222",
                 notified: true,
-                confirmed: true
+                confirmed: true,
+                completed: false
         }
         )
 
@@ -583,12 +596,13 @@ waitlistCollection.insert(
                         customerName: "Sam",
                         restaurantID: 3,
                         groupSize: 3,
-                        joinTime: new Date("February 4, 2019 16:00:00"),
-                        quotedtime: new Date("February 4, 2019 16:10:00"),
+                        joinTime: new Date("February 4, 2019 13:55:00"),
+                        quotedtime: new Date("February 4, 2019 16:15:00"),
                         email : "abc@abc.com",
                         phone : "2062112222",
-                        notified: true,
-                        confirmed: true
+                        notified: false,
+                        confirmed: false,
+                        completed: false
                 }
                 )
                 
@@ -598,12 +612,13 @@ waitlistCollection.insert(
                         customerName: "Tony",
                         restaurantID: 3,
                         groupSize: 2,
-                        joinTime: new Date("February 4, 2019 16:10:00"),
-                        quotedtime: new Date("February 4, 2019 16:10:00"),
+                        joinTime: new Date("February 4, 2019 16:12:00"),
+                        quotedtime: new Date("February 4, 2019 16:30:00"),
                         email : "abc@abc.com",
                         phone : "2062112222",
-                        notified: true,
-                        confirmed: true
+                        notified: false,
+                        confirmed: false,
+                        completed: false
                         }
                         )
                 
@@ -615,11 +630,12 @@ waitlistCollection.insert(
                         restaurantID: 3,
                         groupSize: 5,
                         joinTime: new Date("February 4, 2019 16:15:00"),
-                        quotedtime: new Date("February 4, 2019 16:10:00"),
+                        quotedtime: new Date("February 4, 2019 16:30:00"),
                         email : "abc@abc.com",
                         phone : "2062112222",
-                        notified: true,
-                        confirmed: true
+                        notified: false,
+                        confirmed: false,
+                        completed: false
                 }
                 )
 
@@ -722,6 +738,7 @@ orderCollection = db.getCollection("orders")
 orderCollection.remove({})
 
 orderCollection.insert({
+        "orderId": 1,
         "menuItemId" : 1,
         "quantity": 1,
         "orderTime": "2019-02-05T12:15:00.000Z",
@@ -730,6 +747,7 @@ orderCollection.insert({
 })
 
 orderCollection.insert({
+        "orderId": 1,
         "menuItemId" : 2,
         "quantity": 1,
         "orderTime": "2019-02-05T12:15:00.000Z",
@@ -738,6 +756,7 @@ orderCollection.insert({
 })
 
 orderCollection.insert({
+        "orderId": 1,
         "menuItemId" : 3,
         "quantity": 1,
         "orderTime": "2019-02-05T12:15:00.000Z",
