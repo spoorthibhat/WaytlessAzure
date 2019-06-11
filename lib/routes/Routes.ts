@@ -74,21 +74,21 @@ export class Routes {
         })
 
         //get all  menuItems 
-        app.route('/menuitems/:restId').get((req: Request, res: Response) => {
+        app.route('/menuitems/:restId').get(this.validateAuth,(req: Request, res: Response) => {
             var restId = req.params.restId;
             console.log("Get all menuItems for rest id :" + restId);
             this.menuitem.retrieveAllMenuBasedOnRestaurant(res, { restaurantID: restId });
         })
 
         //get all  menuItems  by category
-        app.route('/menuitems/:restId/:categoryId').get((req: Request, res: Response) => {
+        app.route('/menuitems/:restId/:categoryId').get(this.validateAuth,(req: Request, res: Response) => {
             var restId = req.params.restId;
             var categoryId = req.params.categoryId;
             console.log("Get all menuItems for rest id : " + restId + "category : " + categoryId);
             this.menuitem.retrieveAllMenuBasedOnRestaurant(res, { restaurantID: restId, "itemCategory.categoryId": categoryId });
         })
         //add to menuItem of a particular restaurant
-        app.route('/menuitems').post((req: Request, res: Response) => {
+        app.route('/menuitems').post(this.validateAuth,(req: Request, res: Response) => {
             var menuitems_entry = {
                 "itemID": req.body.itemID,
                 "itemName": req.body.itemName,
@@ -106,7 +106,7 @@ export class Routes {
         })
 
         //add to menuItem category 
-        app.route('/menuitemcategory').post((req: Request, res: Response) => {
+        app.route('/menuitemcategory').post(this.validateAuth,(req: Request, res: Response) => {
             var menuitems_entry = {
                 "categoryId": req.body.categoryId,
                 "categoryName": req.body.categoryName,
@@ -116,14 +116,14 @@ export class Routes {
         })
 
         //delete  menuItem of a particular restaurant
-        app.route('/menuitems/:restId/:itemID').delete((req: Request, res: Response) => {
+        app.route('/menuitems/:restId/:itemID').delete(this.validateAuth,(req: Request, res: Response) => {
             var restId = req.params.restId;
             var itemID = req.params.itemID;
             this.menuitem.deleteMenuBaseOnRestaurantAndMenuId(res, { "restaurantID": restId, "itemID": itemID });
         })
 
         //update menu item
-        app.route('/menuitems').patch((req: Request, res: Response) => {
+        app.route('/menuitems').patch(this.validateAuth,(req: Request, res: Response) => {
 
             var menuitems_entry = {
                 "itemID": req.body.itemID,
@@ -175,7 +175,7 @@ export class Routes {
         })
 
         // to get all the waitlist entries in a restaurant
-        app.route('/waitlist/:restId').get((req: Request, res: Response) => {
+        app.route('/waitlist/:restId').get(this.validateAuth,(req: Request, res: Response) => {
             console.log(res.locals.auth);
             var restuarantId = req.params.restId;
             console.log("Query all waitlist items from restaurant with id: " + restuarantId);
@@ -191,7 +191,7 @@ export class Routes {
         })
 
         // set customer as confirmed in waitlist
-        app.route('/waitlist/:restaurantID/confirm/:queueID').get((req: Request, res: Response) => {
+        app.route('/waitlist/:restaurantID/confirm/:queueID').get(this.validateAuth,(req: Request, res: Response) => {
             var restaurantId = req.params.restaurantID;
             var queueID = req.params.queueID;
             console.log("Set customer as confirmed for " + queueID + " in " + restaurantId);
@@ -244,28 +244,28 @@ export class Routes {
         })
 
         // get all customer with given ID
-        app.route('/customers/:customerId').get((req: Request, res: Response) => {
+        app.route('/customers/:customerId').get(this.validateAuth,(req: Request, res: Response) => {
             var customerId = req.params.customerId;
             console.log("Get all customer using ID: " + customerId);
             this.customerlist.getAllCustomersOnFilter(res, { "customerId": customerId });
         })
 
         // get all customers with given last name
-        app.route('/customers/lastName/:lastName').get((req: Request, res: Response) => {
+        app.route('/customers/lastName/:lastName').get(this.validateAuth,(req: Request, res: Response) => {
             var lastName = req.params.lastName;
             console.log("Get all customer(s) with last name: " + lastName);
             this.customerlist.getAllCustomersOnFilter(res, { "lastName": lastName });
         })
 
         // get all customers with given first name
-        app.route('/customers/firstName/:firstName').get((req: Request, res: Response) => {
+        app.route('/customers/firstName/:firstName').get(this.validateAuth,(req: Request, res: Response) => {
             var firstName = req.params.firstName;
             console.log("Get all customer(s) with first name: " + firstName);
             this.customerlist.getAllCustomersOnFilter(res, { "firstName": firstName });
         })
 
         // add to customer to DB
-        app.route('/customers').post((req: Request, res: Response) => {
+        app.route('/customers').post(this.validateAuth,(req: Request, res: Response) => {
             console.log(req.body);
             var jsonObj = req.body;
             jsonObj.customerId = this.idGenerator;
@@ -276,12 +276,12 @@ export class Routes {
 
 
         //get all  restaurants 
-        app.route('/restaurantlist').get((req: Request, res: Response) => {
+        app.route('/restaurantlist').get(this.validateAuth,(req: Request, res: Response) => {
             console.log("Get all restaurants" + res);
             this.restaurantlist.retrieveAllRestaurantsLists(res);
         })
         // to get restaurant by city or name
-        app.route('/restaurantlist/:param').get((req: Request, res: Response) => {
+        app.route('/restaurantlist/:param').get(this.validateAuth,(req: Request, res: Response) => {
             var param = req.params.param;
             console.log("Get all restaurants  with city: " + param);
             var regex_param = new RegExp(["^", param, "$"].join(""), "i");
@@ -289,13 +289,13 @@ export class Routes {
         })
 
         // to restaurant by id
-        app.route('/restaurantlist/id/:id').get((req: Request, res: Response) => {
+        app.route('/restaurantlist/id/:id').get(this.validateAuth,(req: Request, res: Response) => {
             var id = req.params.id;
             console.log("Get all restaurants  with id: " + id);
             this.restaurantlist.retrieveAllRestaurantsListBasedOnId(res, { "restaurantID": id });
         })
 
-        app.route('/restaurantlist').post((req: Request, res: Response) => {
+        app.route('/restaurantlist').post(this.validateAuth,(req: Request, res: Response) => {
             console.log(req.body);
             var jsonObj = req.body;
             this.restaurantlist.model.create([jsonObj], (err) => {
@@ -307,7 +307,7 @@ export class Routes {
         })
 
         //add to waitlist of a particular restaurant
-        app.route('/waitlist').post((req: Request, res: Response) => {
+        app.route('/waitlist').post(this.validateAuth,(req: Request, res: Response) => {
             console.log(req.body);
             var jsonObj = req.body;
             this.waitlist.model.create([jsonObj], (err) => {
@@ -319,7 +319,7 @@ export class Routes {
         })
 
         // retrive order cart for a customer in a restaurant's cart
-        app.route('/orders/:restaurantId/:customerId').get((req: Request, res: Response) => {
+        app.route('/orders/:restaurantId/:customerId').get(this.validateAuth,(req: Request, res: Response) => {
             var customerId = req.params.customerId;
             var restaurantId = req.params.restaurantId;
 
@@ -328,20 +328,20 @@ export class Routes {
         })
 
         // retrive order cart for a customer in a restaurant's cart
-        app.route('/orders/:restaurantId/:customerId').get((req: Request, res: Response) => {
+        app.route('/orders/:restaurantId/:customerId').get(this.validateAuth,(req: Request, res: Response) => {
             var customerId = req.params.customerId;
             var restaurantId = req.params.restaurantId;
 
             this.order.retrieveOrderPerCustomer(res, { restaurantID: restaurantId, customerId: customerId });
         })
 
-        app.route('/order/:orderId').get((req: Request, res: Response) => {
+        app.route('/order/:orderId').get(this.validateAuth,(req: Request, res: Response) => {
             var orderId = req.params.orderId;
             this.order.retrieveOrderPerCustomer(res, { orderId: orderId });
         })
 
         // add to orderCart
-        app.route('/orders').post((req: Request, res: Response) => {
+        app.route('/orders').post(this.validateAuth,(req: Request, res: Response) => {
             console.log("Restaurant id:" + req.body.restaurantID);
             var jsonObj = {
                 "orderId": req.body.orderId,
@@ -355,7 +355,7 @@ export class Routes {
         })
 
         // edit the quantity of an order in the cart
-        app.route('/orders').patch((req: Request, res: Response) => {
+        app.route('/orders').patch(this.validateAuth,(req: Request, res: Response) => {
             var customerId = req.body.customerId;
             var restaurantId = req.body.restaurantID;
             var menuitemID = req.body.menuitemID;
