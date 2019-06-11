@@ -31,7 +31,11 @@ class App {
         //support application/x-www-form-urlencoded post data
         this.app.use(bodyParser.urlencoded({ extended: false }));
 
-        this.app.use(session({ secret: 'keyboard cat' }));
+        this.app.use(session({ 
+            secret: 'keyboard cat' ,
+            saveUninitialized: false,
+            resave: false
+        }));
         this.app.use(passport.initialize());
         this.app.use(passport.session());
         this.app.use(logger('dev'));

@@ -58,6 +58,7 @@ export class Routes {
     );
 
     app.get('/logout', function(req, res){
+        req.logout();
         req.session.destroy(function (err) {
             res.redirect('/'); 
           });
