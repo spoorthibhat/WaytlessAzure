@@ -65,7 +65,7 @@ export class Routes {
             req.session.destroy(function (err) {
                 console.log("Inside session destroy");
                 res.clearCookie('connect.sid');
-                res.redirect('/#/home');
+                res.redirect('/#/login');
             });
         });
 
