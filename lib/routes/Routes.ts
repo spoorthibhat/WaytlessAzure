@@ -32,13 +32,6 @@ export class Routes {
         this.menuitemcat = new MenuItemCategoryModel();
     }
 
-    private validateAuth(req, res, next): void {
-        if (req.isAuthenticated()) { console.log("user is authenticated"); return next(); }
-        console.log("user is not authenticated");
-        res.redirect('/');
-
-    }
-
     public routes(app): void {
 
         app.use('/', express.static(__dirname + '/angularDist'));
@@ -174,6 +167,13 @@ export class Routes {
             this.waitlist.retrieveAllWaitlists(res);
         })
 
+        app.route('/waitlistTest/:restId').get((req: Request, res: Response) => {
+            console.log(res.locals.auth);
+            var restuarantId = req.params.restId;
+            console.log("Query all waitlist items from restaurant with id: " + restuarantId);
+            this.waitlist.retrieveAllWaitlistEntriesPerRestaurant(res, restuarantId);
+        })
+
         // to get all the waitlist entries in a restaurant
         app.route('/waitlist/:restId').get(this.validateAuth,(req: Request, res: Response) => {
             console.log(res.locals.auth);
@@ -233,6 +233,17 @@ export class Routes {
             }
             console.log("Updating group size for reservation: " + queueID + " in " + restaurantId);
             this.waitlist.updateGroupSize(res, searchCriteria, toBeChanged);
+        })
+
+        app.route('/waitlistTest').post((req: Request, res: Response) => {
+            console.log(req.body);
+            var jsonObj = req.body;
+            this.waitlist.model.create([jsonObj], (err) => {
+                if (err) {
+                    console.log('object creation failed');
+                }
+            });
+            res.send("You are added to the waitlist.");
         })
 
         // ------------------------------- WAIT LIST END ---------------------------- // 
@@ -375,5 +386,11 @@ export class Routes {
 
             this.order.updateQuantity(res, searchCriteria, toBeChanged);
         })
+    }
+
+    private validateAuth(req, res, next): void {
+        if (req.isAuthenticated()) { console.log("user is authenticated"); return next(); }
+        console.log("user is not authenticated");
+        res.redirect('/');
     }
 }
