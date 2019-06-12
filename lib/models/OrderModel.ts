@@ -22,7 +22,7 @@ class OrderModel {
                 menuItemId: Number,
                 quantity: Number,
                 orderTime: Date,
-                customerId : Number,
+                customerId : String,
                 restaurantID : Number
             }, {collection: 'orders'}
         );
