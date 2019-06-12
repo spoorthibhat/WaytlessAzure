@@ -93,7 +93,7 @@ restCollection.insert({
     },
     phoneNumber: 4252457551,
     email: "admin@mediterraneankitchens.net",
-    owner: "someowner@gmail.com",
+    owner: "shasow1129@gmail.com",
     rating: 4,
     reviews: 980,
     url: "../assets/images/image5.jpg"
