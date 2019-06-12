@@ -369,10 +369,9 @@ export class Routes {
             this.order.updateQuantity(res, searchCriteria, toBeChanged);
         })
     }
-    
+
     private validateAuth(req, res, next): void {
         if (req.isAuthenticated()) { console.log("user is authenticated"); return next(); }
-        else if (!req.isAuthenticated()) { return next(); }
         console.log("user is not authenticated");
         res.redirect('/');
     }
