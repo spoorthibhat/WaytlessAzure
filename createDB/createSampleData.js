@@ -343,7 +343,7 @@ menuitemsCollection.insert({
 })
 menuitemsCollection.insert({
     itemID: 10,
-    itemName: "Spaghetti With Meat Sauce Pasta",
+    itemName: "Spaghetti Pasta",
     price: 7.99,
     description: "Eggplant, pork and cheese",
     restaurantID: 3,
@@ -369,7 +369,7 @@ menuitemsCollection.insert({
 })
 menuitemsCollection.insert({
     itemID: 11,
-    itemName: "Item C",
+    itemName: "Pork Rice",
     price: 10.99,
     description: "Fried pork chop with a side of rice",
     restaurantID: 3,
@@ -395,7 +395,7 @@ menuitemsCollection.insert({
 })
 menuitemsCollection.insert({
     itemID: 12,
-    itemName: "Shrimp Scampi Pasta Bowl",
+    itemName: "Shrimp Scampi",
     price: 5.99,
     description: "New Pasta bowl",
     restaurantID: 3,
@@ -422,7 +422,7 @@ menuitemsCollection.insert({
 })
 menuitemsCollection.insert({
     itemID: 14,
-    itemName: "Onion &Spinach Pakoras",
+    itemName: "Onion Pakoras",
     price: 7.99,
     description: "Onion vegetable pakoras",
     restaurantID: 4,
