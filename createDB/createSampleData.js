@@ -139,7 +139,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "1",
         categoryName: "Appetizer",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -152,7 +152,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "1",
         categoryName: "Appetizer",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -165,7 +165,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "1",
         categoryName: "Appetizer",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -178,7 +178,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "3",
         categoryName: "Dessert",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -191,7 +191,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "3",
         categoryName: "Dessert",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -204,7 +204,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "2",
         categoryName: "Entree",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -217,7 +217,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "2",
         categoryName: "Entree",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -230,7 +230,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "2",
         categoryName: "Entree",
-        description: 'description here'
+        description: ''
     }
 })
 
@@ -244,7 +244,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "3",
         categoryName: "Dessert",
-        description: 'description here'
+        description: ''
     }
 
 })
@@ -258,7 +258,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "2",
         categoryName: "Entree",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -271,7 +271,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "1",
         categoryName: "Appetizer",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -284,7 +284,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "1",
         categoryName: "Appetizer",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -297,7 +297,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "1",
         categoryName: "Appetizer",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -310,7 +310,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "3",
         categoryName: "Dessert",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -323,7 +323,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "3",
         categoryName: "Dessert",
-        description: 'description here'
+        description: ''
     }
 })
 
@@ -338,7 +338,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "3",
         categoryName: "Appetizer",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -351,7 +351,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "2",
         categoryName: "Entree",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -364,7 +364,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "2",
         categoryName: "Entree",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -377,7 +377,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "2",
         categoryName: "Entree",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -390,7 +390,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "1",
         categoryName: "Appetizer",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -403,7 +403,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "1",
         categoryName: "Appetizer",
-        description: 'description here'
+        description: ''
     }
 })
 
@@ -417,7 +417,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "1",
         categoryName: "Appetizer",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -430,7 +430,7 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "1",
         categoryName: "Appetizer",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
@@ -443,23 +443,88 @@ menuitemsCollection.insert({
     itemCategory: {
         categoryId: "2",
         categoryName: "Entree",
-        description: 'description here'
+        description: ''
     }
 })
 menuitemsCollection.insert({
-        itemID: 16,
-        itemName: "Chicken curry ",
-        price: 5.99,
-        description: "Chicken curry with ric",
-        restaurantID: 4,
-        url: "https://hips.hearstapps.com/del.h-cdn.co/assets/17/31/2048x1024/landscape-1501791674-delish-chicken-curry-horizontal.jpg?resize=480:*",
-        itemCategory: {
-            categoryId: "2",
-            categoryName: "Entree",
-            description: 'description here'
-        }
-    })
-    // create a table for waitlist
+    itemID: 16,
+    itemName: "Chicken curry ",
+    price: 5.99,
+    description: "Chicken curry with rice",
+    restaurantID: 4,
+    url: "https://hips.hearstapps.com/del.h-cdn.co/assets/17/31/2048x1024/landscape-1501791674-delish-chicken-curry-horizontal.jpg?resize=480:*",
+    itemCategory: {
+        categoryId: "2",
+        categoryName: "Entree",
+        description: ''
+    }
+})
+menuitemsCollection.insert({
+    itemID: 70,
+    itemName: "Tomato dish ",
+    price: 5.99,
+    description: "Tomatoes",
+    restaurantID: 5,
+    url: "https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fill,g_auto,w_660,h_880/k/archive/cc1d997bfbbabd6a4f0c156dd72789f2c03d7b25",
+    itemCategory: {
+        categoryId: "1",
+        categoryName: "Appetizer",
+        description: ''
+    }
+})
+menuitemsCollection.insert({
+    itemID: 71,
+    itemName: "Frittata",
+    price: 5.99,
+    description: "Spinach quiche",
+    restaurantID: 5,
+    url: "https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fill,g_auto,w_660,h_825/k/archive/db86e38bdf8cfdd3cddcfa2d4884282e079d7fd6",
+    itemCategory: {
+        categoryId: "1",
+        categoryName: "Appetizer",
+        description: ''
+    }
+})
+menuitemsCollection.insert({
+    itemID: 72,
+    itemName: "Greek salad",
+    price: 5.99,
+    description: "Healthy salad",
+    restaurantID: 5,
+    url: "https://cdn.apartmenttherapy.info/image/fetch/f_auto,q_auto:eco,c_fill,g_auto,w_660/https://storage.googleapis.com/gen-atmedia/3/2016/05/5613762583f9b84c2c41bedaf9d8ec8983cddcf0.jpeg",
+    itemCategory: {
+        categoryId: "2",
+        categoryName: "Entree",
+        description: ''
+    }
+})
+menuitemsCollection.insert({
+    itemID: 73,
+    itemName: "Chicken curry ",
+    price: 5.99,
+    description: "Pasta salad",
+    restaurantID: 5,
+    url: "https://cdn.apartmenttherapy.info/image/fetch/f_auto,q_auto:eco,c_fill,g_auto,w_660/https://storage.googleapis.com/gen-atmedia/3/2016/05/24d6c28d4985e10ea2d2b7134ce196e23bb28046.jpeg",
+    itemCategory: {
+        categoryId: "2",
+        categoryName: "Entree",
+        description: ''
+    }
+})
+menuitemsCollection.insert({
+    itemID: 74,
+    itemName: "Falafel",
+    price: 5.99,
+    description: "Falafel",
+    restaurantID: 5,
+    url: "https://cdn.apartmenttherapy.info/image/fetch/f_auto,q_auto:eco,c_fill,g_auto,w_660/https://storage.googleapis.com/gen-atmedia/3/2016/05/99573a2e9e8c29dbc9ac3a0a9fec7858061a39b0.jpeg",
+    itemCategory: {
+        categoryId: "3",
+        categoryName: "Dessert",
+        description: ''
+    }
+})
+// create a table for waitlist
 
 db.createCollection('waitlist')
 waitlistCollection = db.getCollection("waitlist")
