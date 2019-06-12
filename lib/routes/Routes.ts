@@ -32,13 +32,6 @@ export class Routes {
         this.menuitemcat = new MenuItemCategoryModel();
     }
 
-    private validateAuth(req, res, next): void {
-        if (req.isAuthenticated()) { console.log("user is authenticated"); return next(); }
-        console.log("user is not authenticated");
-        res.redirect('/');
-
-    }
-
     public routes(app): void {
 
         app.use('/', express.static(__dirname + '/angularDist'));
@@ -375,5 +368,11 @@ export class Routes {
 
             this.order.updateQuantity(res, searchCriteria, toBeChanged);
         })
+    }
+
+    private validateAuth(req, res, next): void {
+        if (req.isAuthenticated()) { console.log("user is authenticated"); return next(); }
+        console.log("user is not authenticated");
+        res.redirect('/');
     }
 }

@@ -74,7 +74,7 @@ restCollection.insert({
     },
     phoneNumber: 4257029192,
     email: "admin@southernspicewa.com",
-    owner: "",
+    owner: "capybarajenkinstest@gmail.com",
     rating: 3,
     reviews: 768,
     booked: 301,
