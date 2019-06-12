@@ -720,7 +720,7 @@ orderCollection.insert({
     "menuItemId": 1,
     "quantity": 1,
     "orderTime": "2019-02-05T12:15:00.000Z",
-    "customerId": 1,
+    "customerId": "capybarajenkinstest@gmail.com",
     "restaurantID": 2
 })
 
@@ -729,7 +729,7 @@ orderCollection.insert({
     "menuItemId": 2,
     "quantity": 1,
     "orderTime": "2019-02-05T12:15:00.000Z",
-    "customerId": 1,
+    "customerId": "capybarajenkinstest@gmail.com",
     "restaurantID": 2
 })
 
@@ -738,6 +738,6 @@ orderCollection.insert({
     "menuItemId": 3,
     "quantity": 1,
     "orderTime": "2019-02-05T12:15:00.000Z",
-    "customerId": 1,
+    "customerId": "capybarajenkinstest@gmail.com",
     "restaurantID": 2
 })
