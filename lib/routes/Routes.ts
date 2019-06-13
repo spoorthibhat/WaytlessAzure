@@ -191,7 +191,7 @@ export class Routes {
         })
 
         // set customer as confirmed in waitlist
-        app.route('/waitlist/:restaurantID/confirm/:queueID').get(this.validateAuth,(req: Request, res: Response) => {
+        app.route('/waitlist/:restaurantID/confirm/:queueID').get((req: Request, res: Response) => {
             var restaurantId = req.params.restaurantID;
             var queueID = req.params.queueID;
             console.log("Set customer as confirmed for " + queueID + " in " + restaurantId);
